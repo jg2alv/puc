@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -28,7 +32,6 @@ header nav {
     width: 70%;
     height: 100%;
     padding: 0.5% 0 0.5% 0;
-    box-sizing: border-box;
 }
 
 header nav img {
@@ -39,6 +42,7 @@ main {
     height: 95%;
     background-color: aquamarine;
     display: flex;
+    padding: 2.5% 0 2.5% 0;
 }
 
 main > * {
@@ -47,25 +51,70 @@ main > * {
 
 main > .side {
     width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main > .center {
     width: 60%;
 }
 
-main .gallery {
-    padding: 2% 0 2% 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    box-sizing: border-box;
+main .side.gallery {
+    justify-content: space-between;
 }
 
 main .gallery img {
     display: block;
     width: 50%;
     border-radius: 50%;
+}
+
+main .center #icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16%;
+}
+
+main .center #icon img {
+    width: 10%;
+    border-radius: 50%;
+}
+
+main .center .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 84%;
+}
+
+main .center .main .content {
+    width: 70%;
+    height: 15%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+main .side.widgets {
+    justify-content: center;
+}
+
+main .side.widgets > div {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .side.widgets .maps img {
+    width: 70%;
+    border-radius: 10px;
 }
 
 footer {
