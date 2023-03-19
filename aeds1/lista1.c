@@ -434,11 +434,5 @@ int main()
     ex514();
     ex515();
 
-    /*
-        if(you_found_a_bug() && you_were_the_first_to_report_it())
-        {
-            joao_owes_a_beer_to(you);
-            whatsapp_write(your_number, "+5531983572813");
-        }
-    */
+    return 0;
 }
