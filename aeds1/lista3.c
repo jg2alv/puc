@@ -19,7 +19,7 @@ void ex1b()
     scanf("%lf", &b);
 
     for(double i = a; i <= b; i++)
-        printf("%d\n", i);
+        printf("%lf\n", i);
 }
 
 void ex1c()
@@ -31,10 +31,10 @@ void ex1c()
 
     if(a <= b)
         for(double i = a; i <= b; i++)
-            printf("%d\n", i);
+            printf("%lf\n", i);
     else
         for(double i = b; i <= a; i++)
-            printf("%d\n", i);
+            printf("%lf\n", i);
 }
 
 void ex2()
@@ -114,7 +114,8 @@ void ex6()
 
 void ex7()
 {
-    int a, b, total;
+    int a, b;
+    int total = 0;
 
     scanf("%d", &a);
     scanf("%d", &b);
@@ -210,7 +211,9 @@ void ex10()
 
 int main()
 {
-    ex1();
+    ex1a();
+    ex1b();
+    ex1c();
     ex2();
     ex3();
     ex4();
