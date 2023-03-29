@@ -1,3 +1,5 @@
+// URL: https://pucminas.instructure.com/courses/148103/files/8251116?module_item_id=3214347
+
 #include <stdio.h>
 #include <math.h>
 
@@ -10,9 +12,9 @@ int f1(int* x, int n)
     int sum = 0;
 
     for(int i = 1; i <= n; i++)
-        sum += pow(x[i], 2);
+        sum += pow(x[i - 1], 2);
 
-    return x;
+    return sum;
 }
 
 // Rosenbrock
@@ -21,7 +23,7 @@ double f2(double* x, int n)
     double sum = 0;
 
     for(int i = 1; i < n; i++)
-        sum += (100*(pow(pow(x[1], 2) - x[i + 1], 2) + pow(1 - x[i], 2)));
+        sum += (100*(pow(pow(x[i - 1], 2) - x[i], 2) + pow(1 - x[i - 1], 2)));
 
     return sum;
 }
@@ -33,7 +35,9 @@ int f3(double* x, int n)
     int sum = 0;
 
     for(int i = 1; i <= n; i++)
-        sum += (int)x[i];
+        sum += (int)x[i - 1];
+        
+    return sum;
 }
 
 
@@ -50,30 +54,28 @@ int f3(double* x, int n)
 
 
 // Shekel's Foxholes
-double f5(double* x, int n)
-{
-    double sum = 0.002;
-    double ssum = 0;
+// double f5(double* x, int n)
+// {
+//     double sum = 0.002;
+//     double ssum = 0;
 
-    for(int j = 1; j <= 25; j++)
-    {    
-        for(int i = 1; i <= 2; i++)
-            ssum += pow(x[i], 6);
+//     for(int j = 1; j <= 25; j++)
+//     {    
+//         for(int i = 1; i <= 2; i++)
+//             ssum += pow(x[i - 1] - a[i - 1][j - 1], 6);
 
-        sum += 1 / (j + ssum); 
-    }
+//         sum += 1 / (j + ssum); 
+//     }
 
-    return sum;
-}
+//     return sum;
+// }
 
 
 // Schaffer
 double f6(int* x, int n)
 {
-    int x1_2 = pow(x[0], 2);
-    int x2_2 = pow(x[1], 2);
-
-    return pow(x1_2 + x1_2, 0.25) * (pow(sin(50 * pow(x1_2 + x2_2, 0.1)), 2) + 1);
+    int xsum = pow(x[0], 2) + pow(x[1], 2);
+    return pow(xsum, 0.25) * (pow(sin(50 * pow(xsum, 0.1)), 2) + 1);
 }
 
 
@@ -90,7 +92,7 @@ double f8(double* x, int n)
     double sum = 10 * n;
 
     for(int i = 1; i <= n; i++)
-        sum += pow(x[i], 2) - 10 * cos(2 * M_PI * x[i]);
+        sum += pow(x[i - 1], 2) - 10 * cos(2 * M_PI * x[i - 1]);
 
     return sum;
 }
