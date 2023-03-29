@@ -11,8 +11,8 @@ int f1(int* x, int n)
 {
     int sum = 0;
 
-    for(int i = 1; i <= n; i++)
-        sum += pow(x[i - 1], 2);
+    for(int i = 0; i <= n - 1; i++)
+        sum += pow(x[i], 2);
 
     return sum;
 }
@@ -22,8 +22,8 @@ double f2(double* x, int n)
 {
     double sum = 0;
 
-    for(int i = 1; i < n; i++)
-        sum += (100*(pow(pow(x[i - 1], 2) - x[i], 2) + pow(1 - x[i - 1], 2)));
+    for(int i = 0; i < n - 1; i++)
+        sum += (100*(pow(pow(x[i], 2) - x[i + 1], 2) + pow(1 - x[i], 2)));
 
     return sum;
 }
@@ -34,8 +34,8 @@ int f3(double* x, int n)
 {
     int sum = 0;
 
-    for(int i = 1; i <= n; i++)
-        sum += (int)x[i - 1];
+    for(int i = 0; i < n; i++)
+        sum += (int)x[i];
         
     return sum;
 }
@@ -46,7 +46,7 @@ int f3(double* x, int n)
 // {
 //     double sum = 0;
 
-//     for(int i = 1; i <= n; i++)
+//     for(int i = 0; i < n; i++)
 //         sum += i * pow(x[i], 4) + Gauss(0, 1)
 
 //     return sum;
@@ -59,12 +59,12 @@ int f3(double* x, int n)
 //     double sum = 0.002;
 //     double ssum = 0;
 
-//     for(int j = 1; j <= 25; j++)
+//     for(int j = 0; j < 25; j++)
 //     {    
-//         for(int i = 1; i <= 2; i++)
-//             ssum += pow(x[i - 1] - a[i - 1][j - 1], 6);
+//         for(int i = 0; i < 2; i++)
+//             ssum += pow(x[i] - a[i][j], 6);
 
-//         sum += 1 / (j + ssum); 
+//         sum += 1 / (1 + j + ssum); 
 //     }
 
 //     return sum;
@@ -91,8 +91,8 @@ double f8(double* x, int n)
 {
     double sum = 10 * n;
 
-    for(int i = 1; i <= n; i++)
-        sum += pow(x[i - 1], 2) - 10 * cos(2 * M_PI * x[i - 1]);
+    for(int i = 0; i < n; i++)
+        sum += pow(x[i], 2) - 10 * cos(2 * M_PI * x[i]);
 
     return sum;
 }
