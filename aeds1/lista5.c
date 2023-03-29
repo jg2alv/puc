@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <math.h>
 
-#define M_PI 3.141593
-
 
 // Sphere (quadratic)
 int f1(int* x, int n)
