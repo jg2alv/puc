@@ -96,3 +96,27 @@ double f8(double* x, int n)
 
     return sum;
 }
+
+int main()
+{
+    int af1[] = {0,0,0};
+    double af2[] = {1,1};
+    double af3[] = {0,0,0,0,0};
+    double af4[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    double af5[] = {0,0};
+    int af6[] = {0,0};
+    int af7[] = {0,0};
+    double af8[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    
+    
+    printf("%d\n", f1(af1, 3));
+    printf("%lf\n", f2(af2, 2));
+    printf("%d\n", f3(af3, 5));
+    //printf("%lf\n", f4(af4, 30));
+    //printf("%lf\n", f5(af5, 2));
+    printf("%lf\n", f6(af6, 2));
+    printf("%lf\n", f7(af7, 2));
+    printf("%lf\n", f8(af8, 20));
+    
+    return 0;
+}
