@@ -14,7 +14,7 @@ class Main
             n4 = scanner.nextDouble();
             sum = n1 + n2 + n3 + n4;
             
-            System.out.printf("%lf", sum);
+            System.out.printf("%f", sum);
         }
 
     }
@@ -30,7 +30,7 @@ class Main
             perc = scanner.nextDouble();
             nsal = sal * (perc / 100);
         
-            System.out.printf("%lf", nsal);
+            System.out.printf("%f", nsal);
         }
 
     }
@@ -45,7 +45,7 @@ class Main
             radius = scanner.nextDouble();
             area = Math.PI * Math.pow(radius, 2);
         
-            System.out.printf("%lf", area);
+            System.out.printf("%f", area);
         }
     }
 
@@ -64,7 +64,7 @@ class Main
             tax = price0 * (perc_tax / 100);
             price = price0 + prof + tax;
 
-            System.out.printf("%lf", price);
+            System.out.printf("%f", price);
         }
     }
 
@@ -80,7 +80,7 @@ class Main
             rad = Math.toRadians(deg);
             l = h * Math.sin(rad);
 
-            System.out.printf("%lf", l);
+            System.out.printf("%f", l);
         }
     }
 
@@ -101,7 +101,7 @@ class Main
     }
 
 
-    public static void main()
+    public static void main(String[] args)
     {
         ex_r_1();
         ex_r_5();
