@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <math.h>
 
-#define PI 3.141592
+#ifndef M_PI
+#define M_PI 3.141592
+#endif
 
 void ex1a()
 {
@@ -41,7 +43,7 @@ void ex2()
 {
     for(int i = 1; i <= 90; i++)
     {
-        double ang = i * (2 * PI / 360);
+        double ang = i * M_PI / 180;
         printf("%lf %lf %lf", sin(ang), cos(ang), tan(ang));
     }
 }
