@@ -55,6 +55,7 @@ class Main {
     public static void main(String[] args) {
         Main main = new Main();
 
+
         main.ex_r_05();
         main.ex_r_10();
         main.ex_r_15();
