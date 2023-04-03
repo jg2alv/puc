@@ -1,4 +1,4 @@
-package aeds1.livros.Fundamentos_da_Programacao_de_Computadores.Cap_7;
+package aeds1.livros.Fundamentos_da_Programacao_de_Computadores.Cap_07;
 import java.util.*;
 
 class Main {
