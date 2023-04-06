@@ -13,29 +13,104 @@ class Main {
     }
 
     public void ex_r_05() {
+        int j = 0;
+        double sum = 0;
 
+        int n = this.scanner.nextInt();
+        double x = this.scanner.nextDouble();
+
+        for (int i = 1; i <= n; i++) {
+            switch (i % 6) {
+                case 1:
+                    j = 1;
+                    break;
+
+                case 2:
+                case 0:
+                    j = 2;
+                    break;
+
+                case 3:
+                case 5:
+                    j = 3;
+                    break;
+
+                case 4:
+                    j = 4;
+                    break;
+
+                default:
+                    System.out.println("this should never happen: n % 6 E [0, 5]");
+                    return;
+            }
+
+            for (int k = j; k >= 1; --k) {
+                j *= k;
+            }
+
+            if(i % 2 == 0) {
+                sum += Math.pow(x, 2) / j;
+            } else {
+                sum += (-1 * Math.pow(x, 2)) / j;
+            }
+        }
+
+        System.out.printf("%d\n", sum);
     }
 
     public void ex_r_10() {
+        int age_under_18 = 0;
+        int age_sum = 0;
+        int height_sum = 0;
+        int weight_over_80 = 0;
         
+        double age_avg;
+        double height_avg;
+        double perc;
+
+        for(int t = 1; t <= 5; t++) {
+            for(int p = 1; p <= 11; p++) {
+                int age = this.scanner.nextInt();
+                int height = this.scanner.nextInt();
+                int weight = this.scanner.nextInt();
+
+                if(age < 18)
+                    age_under_18++;
+
+                if(weight > 80)
+                    weight_over_80++;
+
+                age_sum += age;
+                height_sum += height;
+            }
+        }
+
+        age_avg = age_sum / 55;
+        height_avg = height_sum / 55;
+        perc = weight_over_80 / 55;
+
+        System.out.printf("age < 18: %d\n", age_under_18);
+        System.out.printf("age avg: %f\n", age_avg);
+        System.out.printf("height avg: %f\n", height_avg);
+        System.out.printf("weight > 80: %f%\n", perc * 100);
     }
 
     public void ex_r_15() {
         double grt_price = 0;
         double sml_price = 100000;
-        double sum_add;
-        double sum_tax;
-        int sum_cheap;
-        int sum_norm;
-        int sum_exp;
+        double sum_add = 0;
+        double sum_tax = 0;
+        int sum_cheap = 0;
+        int sum_norm = 0;
+        int sum_exp = 0;
 
         for(int i = 1; i <= 12; i++) {
-            double tax;
-            int stocking;
-            double tprice;
+            double tax = 0;
+            int stocking = 0;
+            double tprice = 0;
             double price = this.scanner.nextDouble();
-            String cool = this.scanner.nextString();
-            String category = this.scanner.nextString();
+            String cool = this.scanner.nextLine();
+            String category = this.scanner.nextLine();
         
             if(price < 20) {
                 switch(category) {
@@ -79,15 +154,15 @@ class Main {
                         else if(category.equals("V"))
                             stocking = 4;
                         else {
-                            System.out.println("Opcao de categoria inserida invalida")
+                            System.out.println("Opcao de categoria inserida invalida");
                             return;
                         }
                         break;
 
                     case "N":
-                        if(category.equals("A") || category.equals("V")) {
+                        if(category.equals("A") || category.equals("V"))
                             stocking = 0;
-                        else if(category.equals("L")) {
+                        else if(category.equals("L"))
                             stocking = 1;
                         else {
                             System.out.println("Opcao de categoria inserida invalida");
@@ -97,6 +172,7 @@ class Main {
                 
                     default:
                         System.out.println("Opcao de refrigeracao inserida invalida");
+                        return;
                 }
 
                 if(category.equals("A") || cool.equals("S"))
