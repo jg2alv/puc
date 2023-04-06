@@ -100,9 +100,10 @@ class Main {
         double sml_price = 100000;
         double sum_add = 0;
         double sum_tax = 0;
-        int sum_cheap = 0;
-        int sum_norm = 0;
-        int sum_exp = 0;
+        
+        int count_cheap = 0;
+        int count_norm = 0;
+        int count_exp = 0;
 
         for(int i = 1; i <= 12; i++) {
             double tax = 0;
@@ -127,7 +128,7 @@ class Main {
                         break;
 
                     default:
-                        System.out.println("Categoria inserida invalida...");
+                        System.out.println("Categoria inserida invalida");
                         return;
                 }
             } else if(price >= 20 && price <= 50) {
@@ -184,13 +185,13 @@ class Main {
 
                 if(tprice < 20) {
                     System.out.println("barato");
-                    sum_cheap++;
+                    count_cheap++;
                 } else if(tprice >= 20 && tprice <= 100) {
                     System.out.println("normal");
-                    sum_norm++;
+                    count_norm++;
                 } else {
                     System.out.println("caro");
-                    sum_exp++;
+                    count_exp++;
                 }
 
                 sum_add += (stocking + tax);
@@ -207,9 +208,9 @@ class Main {
             System.out.printf("maior final: %f\n", grt_price);
             System.out.printf("menor final: %f\n", sml_price);
             System.out.printf("imposto total: %f\n", sum_tax);
-            System.out.printf("barato: %f\n", sum_cheap);
-            System.out.printf("caro: %f\n", sum_exp);
-            System.out.printf("normal: %f\n", sum_norm);
+            System.out.printf("barato: %d\n", count_cheap);
+            System.out.printf("caro: %d\n", count_exp);
+            System.out.printf("normal: %d\n", count_norm);
         }
     }
 
