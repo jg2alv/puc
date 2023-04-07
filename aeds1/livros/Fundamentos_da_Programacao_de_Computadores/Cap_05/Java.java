@@ -1,4 +1,5 @@
 package aeds1.livros.Fundamentos_da_Programacao_de_Computadores.Cap_05;
+
 import java.util.*;
 
 class Main {
@@ -48,7 +49,7 @@ class Main {
                 j *= k;
             }
 
-            if(i % 2 == 0) {
+            if (i % 2 == 0) {
                 sum += Math.pow(x, 2) / j;
             } else {
                 sum += (-1 * Math.pow(x, 2)) / j;
@@ -63,21 +64,21 @@ class Main {
         int age_sum = 0;
         int height_sum = 0;
         int weight_over_80 = 0;
-        
+
         double age_avg;
         double height_avg;
         double perc;
 
-        for(int t = 1; t <= 5; t++) {
-            for(int p = 1; p <= 11; p++) {
+        for (int t = 1; t <= 5; t++) {
+            for (int p = 1; p <= 11; p++) {
                 int age = this.scanner.nextInt();
                 int height = this.scanner.nextInt();
                 int weight = this.scanner.nextInt();
 
-                if(age < 18)
+                if (age < 18)
                     age_under_18++;
 
-                if(weight > 80)
+                if (weight > 80)
                     weight_over_80++;
 
                 age_sum += age;
@@ -100,21 +101,21 @@ class Main {
         double sml_price = 100000;
         double sum_add = 0;
         double sum_tax = 0;
-        
+
         int count_cheap = 0;
         int count_norm = 0;
         int count_exp = 0;
 
-        for(int i = 1; i <= 12; i++) {
+        for (int i = 1; i <= 12; i++) {
             double tax = 0;
             int stocking = 0;
             double tprice = 0;
             double price = this.scanner.nextDouble();
             String cool = this.scanner.nextLine();
             String category = this.scanner.nextLine();
-        
-            if(price < 20) {
-                switch(category) {
+
+            if (price < 20) {
+                switch (category) {
                     case "A":
                         stocking = 2;
                         break;
@@ -131,8 +132,8 @@ class Main {
                         System.out.println("Categoria inserida invalida");
                         return;
                 }
-            } else if(price >= 20 && price <= 50) {
-                switch(cool) {
+            } else if (price >= 20 && price <= 50) {
+                switch (cool) {
                     case "S":
                         stocking = 6;
                         break;
@@ -145,14 +146,14 @@ class Main {
                         System.out.println("Opcao de refrigeracao inserida invalida");
                         return;
                 }
-            } else if(price > 50) {
-                switch(cool) {
+            } else if (price > 50) {
+                switch (cool) {
                     case "S":
-                        if(category.equals("A"))
+                        if (category.equals("A"))
                             stocking = 5;
-                        else if(category.equals("L"))
+                        else if (category.equals("L"))
                             stocking = 2;
-                        else if(category.equals("V"))
+                        else if (category.equals("V"))
                             stocking = 4;
                         else {
                             System.out.println("Opcao de categoria inserida invalida");
@@ -161,32 +162,32 @@ class Main {
                         break;
 
                     case "N":
-                        if(category.equals("A") || category.equals("V"))
+                        if (category.equals("A") || category.equals("V"))
                             stocking = 0;
-                        else if(category.equals("L"))
+                        else if (category.equals("L"))
                             stocking = 1;
                         else {
                             System.out.println("Opcao de categoria inserida invalida");
                             return;
                         }
                         break;
-                
+
                     default:
                         System.out.println("Opcao de refrigeracao inserida invalida");
                         return;
                 }
 
-                if(category.equals("A") || cool.equals("S"))
+                if (category.equals("A") || cool.equals("S"))
                     tax = 0.02 * price;
                 else
                     tax = 0.04 * price;
-            
+
                 tprice = price + tax;
 
-                if(tprice < 20) {
+                if (tprice < 20) {
                     System.out.println("barato");
                     count_cheap++;
-                } else if(tprice >= 20 && tprice <= 100) {
+                } else if (tprice >= 20 && tprice <= 100) {
                     System.out.println("normal");
                     count_norm++;
                 } else {
@@ -197,10 +198,10 @@ class Main {
                 sum_add += (stocking + tax);
                 sum_tax += tax;
 
-                if(tprice > grt_price)
+                if (tprice > grt_price)
                     grt_price = tprice;
 
-                if(tprice < sml_price)
+                if (tprice < sml_price)
                     sml_price = tprice;
             }
 
@@ -220,7 +221,7 @@ class Main {
         main.ex_r_05();
         main.ex_r_10();
         main.ex_r_15();
-        
+
         main.close();
     }
 }

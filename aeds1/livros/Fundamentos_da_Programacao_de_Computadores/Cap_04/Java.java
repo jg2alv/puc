@@ -1,4 +1,5 @@
 package aeds1.livros.Fundamentos_da_Programacao_de_Computadores.Cap_04;
+
 import java.util.*;
 
 class Main {
@@ -18,13 +19,13 @@ class Main {
         int n3 = this.scanner.nextInt();
         int n4 = this.scanner.nextInt();
 
-        if(n4 > n3)
+        if (n4 > n3)
             System.out.printf("%d %d %d %d\n", n4, n3, n2, n1);
-        if(n4 > n3 && n4 < n3)
+        if (n4 > n3 && n4 < n3)
             System.out.printf("%d %d %d %d\n", n3, n4, n2, n1);
-        if(n4 > n1 && n4 < n2)
+        if (n4 > n1 && n4 < n2)
             System.out.printf("%d %d %d %d\n", n3, n2, n4, n1);
-        if(n4 < n1)
+        if (n4 < n1)
             System.out.printf("%d %d %d %d\n", n3, n2, n1, n4);
     }
 
@@ -33,7 +34,7 @@ class Main {
         double n2 = this.scanner.nextDouble();
         int op = this.scanner.nextInt();
 
-        switch(op) {
+        switch (op) {
             case 1:
                 double avg = (n1 + n2) / 2;
                 System.out.printf("avg: %f\n", avg);
@@ -50,7 +51,7 @@ class Main {
                 break;
 
             case 4:
-                if(n2 != 0)
+                if (n2 != 0)
                     System.out.printf("div: %f\n", n1 / n2);
                 break;
 
@@ -61,14 +62,14 @@ class Main {
     }
 
     public void ex_p_10() {
-       double price, cost, perc, tax;
-       
-       cost = this.scanner.nextDouble();
+        double price, cost, perc, tax;
 
-       if(cost < 12000) {
+        cost = this.scanner.nextDouble();
+
+        if (cost < 12000) {
             perc = cost * 0.05;
             tax = 0.0;
-        } else if(cost >= 12000 && cost <= 25000) {
+        } else if (cost >= 12000 && cost <= 25000) {
             perc = cost * 0.1;
             tax = cost * 0.15;
         } else {
@@ -84,7 +85,7 @@ class Main {
         int type = this.scanner.nextInt();
         double value = this.scanner.nextDouble();
 
-        switch(type) {
+        switch (type) {
             case 1:
                 value *= 1.03;
                 break;
@@ -92,7 +93,7 @@ class Main {
             case 2:
                 value *= 1.04;
                 break;
-            
+
             default:
                 System.out.println("invalid option!");
                 return;
@@ -104,15 +105,15 @@ class Main {
     public void ex_p_20() {
         int age = this.scanner.nextInt();
 
-        if(age >= 5 && age <= 7)
+        if (age >= 5 && age <= 7)
             System.out.println("infantil");
-        else if(age >= 8 && age <= 10)
+        else if (age >= 8 && age <= 10)
             System.out.println("juvenil");
-        else if(age >= 11 && age <= 15)
+        else if (age >= 11 && age <= 15)
             System.out.println("adolescente");
-        else if(age >= 16 && age <= 30)
+        else if (age >= 16 && age <= 30)
             System.out.println("adulto");
-        else if(age > 30)
+        else if (age > 30)
             System.out.println("senior");
     }
 
@@ -120,15 +121,15 @@ class Main {
         int prize;
         int ext = this.scanner.nextInt();
         int abs = this.scanner.nextInt();
-        double H = 60 * (ext - 2*abs/3);
-        
-        if(H < 600)
+        double H = 60 * (ext - 2 * abs / 3);
+
+        if (H < 600)
             prize = 100;
-        else if(H >= 600 && H < 1200)
+        else if (H >= 600 && H < 1200)
             prize = 200;
-        else if(H >= 1200 && H < 1800)
+        else if (H >= 1200 && H < 1800)
             prize = 300;
-        else if(H >= 1800 && H < 2400)
+        else if (H >= 1800 && H < 2400)
             prize = 400;
         else
             prize = 500;
@@ -145,7 +146,7 @@ class Main {
         main.ex_p_15();
         main.ex_p_20();
         main.ex_p_25();
-        
+
         main.close();
     }
 }
