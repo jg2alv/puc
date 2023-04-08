@@ -89,7 +89,7 @@ class Main {
                 break;
         }
 
-        System.out.println("");
+        System.out.println();
     }
 
     public void ex_r_25() {
@@ -118,7 +118,7 @@ class Main {
         for (i = 0; i < primes.length; i++)
             System.out.printf("%d ", primes[i]);
 
-        System.out.println("");
+        System.out.println();
     }
 
     public static void main(String[] args) {
