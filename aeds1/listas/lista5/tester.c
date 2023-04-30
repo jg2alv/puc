@@ -90,4 +90,6 @@ void test(const char *path, double (*f)(double *, int), double maxerror)
 
     print_statistics(errors, sz, passed, failed);
     printf("Testes em %s finalizados.\n\n", path);
+
+    fclose(fp);
 }
