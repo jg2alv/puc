@@ -8,39 +8,37 @@
 #endif
 
 // Sphere (quadratic)
-int f1(int* x, int n)
+double f1(double *x, int n)
 {
-    int sum = 0;
+    double sum = 0;
 
-    for(int i = 0; i <= n - 1; i++)
+    for (int i = 0; i <= n - 1; i++)
         sum += pow(x[i], 2);
 
     return sum;
 }
 
 // Rosenbrock
-double f2(double* x, int n)
+double f2(double *x, int n)
 {
     double sum = 0;
 
-    for(int i = 0; i < n - 1; i++)
-        sum += (100*(pow(pow(x[i], 2) - x[i + 1], 2) + pow(1 - x[i], 2)));
+    for (int i = 0; i < n - 1; i++)
+        sum += (100 * (pow(pow(x[i], 2) - x[i + 1], 2) + pow(1 - x[i], 2)));
 
     return sum;
 }
 
-
 // Degrau - De Jong
-int f3(double* x, int n)
+int f3(double *x, int n)
 {
     int sum = 0;
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         sum += (int)x[i];
-        
+
     return sum;
 }
-
 
 // Gauss - De Jong
 // double f4(double* x, int n)
@@ -53,7 +51,6 @@ int f3(double* x, int n)
 //     return sum;
 // }
 
-
 // Shekel's Foxholes
 // double f5(double* x, int n)
 // {
@@ -61,63 +58,36 @@ int f3(double* x, int n)
 //     double ssum = 0;
 
 //     for(int j = 0; j < 25; j++)
-//     {    
+//     {
 //         for(int i = 0; i < 2; i++)
 //             ssum += pow(x[i] - a[i][j], 6);
 
-//         sum += 1 / (1 + j + ssum); 
+//         sum += 1 / (1 + j + ssum);
 //     }
 
 //     return sum;
 // }
 
-
 // Schaffer
-double f6(int* x, int n)
+double f6(double *x, int n)
 {
-    int xsum = pow(x[0], 2) + pow(x[1], 2);
+    double xsum = pow(x[0], 2) + pow(x[1], 2);
     return pow(xsum, 0.25) * (pow(sin(50 * pow(xsum, 0.1)), 2) + 1);
 }
 
-
 // [sem nome]
-double f7(int* x, int n)
+double f7(double *x, int n)
 {
     return (pow(x[0], 2) + pow(x[1], 2)) / 2 - cos(20 * M_PI * x[0]) * cos(20 * M_PI * x[1]) + 2;
 }
 
-
 // Rastrigin
-double f8(double* x, int n)
+double f8(double *x, int n)
 {
     double sum = 10 * n;
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         sum += pow(x[i], 2) - 10 * cos(2 * M_PI * x[i]);
 
     return sum;
-}
-
-int main()
-{
-    int af1[] = {0,0,0};
-    double af2[] = {1,1};
-    double af3[] = {0,0,0,0,0};
-    double af4[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    double af5[] = {0,0};
-    int af6[] = {0,0};
-    int af7[] = {0,0};
-    double af8[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    
-    
-    printf("%d\n", f1(af1, 3));
-    printf("%lf\n", f2(af2, 2));
-    printf("%d\n", f3(af3, 5));
-    //printf("%lf\n", f4(af4, 30));
-    //printf("%lf\n", f5(af5, 2));
-    printf("%lf\n", f6(af6, 2));
-    printf("%lf\n", f7(af7, 2));
-    printf("%lf\n", f8(af8, 20));
-    
-    return 0;
 }
