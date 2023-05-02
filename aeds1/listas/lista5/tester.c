@@ -5,16 +5,6 @@
 
 #include "reader.h"
 
-void print_test(double eresult, double result, int suite, const char *status)
-{
-    printf("\tSuite S%d:\n", suite + 1);
-    printf("\t\tResultado esperado: %lf\n", eresult);
-    printf("\t\tResultado real:     %lf\n", result);
-    printf("\t\tErro:               %lf\n", eresult - result);
-    printf("\t\tStatus:             %s\n", status);
-    printf("\n");
-}
-
 void print_statistics(double *errors, int sz, int passed, int failed)
 {
     double sum, avg, amp, dp = 0, grt = INT_MIN, sml = INT_MAX;
@@ -76,16 +66,23 @@ void test(const char *path, double (*f)(double *, int), double maxerror)
         result = f(values, dim);
         errors[i] = eresult - result;
 
+        printf("\tSuite S%d:\n", i + 1);
+        printf("\t\tResultado esperado: %lf\n", eresult);
+        printf("\t\tResultado real:     %lf\n", result);
+        printf("\t\tErro:               %lf\n", eresult - result);
+
         if (fabs(errors[i]) > maxerror)
         {
-            print_test(eresult, result, i, "nao passou");
+            printf("\t\tStatus:             nao passou\n");
             failed++;
         }
         else
         {
-            print_test(eresult, result, i, "passou");
+            printf("\t\tStatus:             passou\n");
             passed++;
         }
+
+        printf("\n");
     }
 
     print_statistics(errors, sz, passed, failed);
