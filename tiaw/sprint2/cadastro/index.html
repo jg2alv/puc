@@ -6,12 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="cadastro.css">
-    <script defer src="cadastro.js"></script>
-    <title>Quero colocar um pet para adocao</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+    <title>Quero colocar um pet para adoção</title>
 </head>
 
 <body>
+  <header class="main_header container">        
+    <div id="container" class="content">
+    
+        <article class="caixa-logo">
+            <img src="logomeupet.png">
+        </article>
+    
+    </div>
+      <h2>Cadastro de pet para adoção:</h2>
+</header>
     <div class="container">
         <form>
             <div class="form-group">
@@ -23,11 +33,11 @@
               <input required id="age" type="number" class="form-control" placeholder="Insira a idade em anos do seu pet">
             </div>
             <div class="form-group">
-              <label>Raca/especie do pet</label>
-              <input required id="species" type="text" class="form-control" placeholder="Insira a raca/ especie do seu pet">
+              <label>Raça/espécie do pet</label>
+              <input required id="species" type="text" class="form-control" placeholder="Insira a raça/ espécie do seu pet">
             </div>
             <div class="form-group">
-                <label>Descricao do pet</label>
+                <label>Descrição do pet</label>
                 <textarea required id="desc" type="text" class="form-control" placeholder="Insira uma breve descricao do seu pet"></textarea>
               </div>
             <div class="custom-file">
