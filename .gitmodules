@@ -1,0 +1,3 @@
+[submodule "calc1/pythreader"]
+	path = calc1/pythreader
+	url = https://github.com/jg2alv/pythreader
